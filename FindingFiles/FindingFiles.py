@@ -41,7 +41,7 @@ def find_files(suffix, path):
 # Download the testdir.zip and unzip it at $HOME
 
 # Test #1: Finding all the files with suffix .c in the testdir
-print(f"\n{'#'*10} Test #1 {'#'*10} ")
+print(f"\n{'#' * 10} Test #1 {'#' * 10} ")
 for _path_ in find_files(".c", f"{os.environ['HOME']}/testdir"):
     print(_path_)
 # Output: ($HOME will replaced with the actual path string)
@@ -51,28 +51,28 @@ for _path_ in find_files(".c", f"{os.environ['HOME']}/testdir"):
 # $HOME/testdir/subdir1/a.c
 
 # Test #2: Path of the file which exists and have a suffix .c
-print(f"\n{'#'*10} Test #2 {'#'*10} ")
+print(f"\n{'#' * 10} Test #2 {'#' * 10} ")
 for _path_ in find_files(".c", f"{os.environ['HOME']}/testdir/subdir3/subsubdir1/b.c"):
     print(_path_)
 # Output: ($HOME will replaced with the actual path string)
 # $HOME/testdir/subdir3/subsubdir1/b.c
 
 # Test #3: Path of the file which exists and does not have a suffix .c
-print(f"\n{'#'*10} Test #3 {'#'*10} ")
+print(f"\n{'#' * 10} Test #3 {'#' * 10} ")
 for _path_ in find_files(".c", f"{os.environ['HOME']}/testdir/t1.h"):
     print(_path_)
 # Output: ($HOME will replaced with the actual path string)
 #
 
 # Test #4: Empty String
-print(f"\n{'#'*10} Test #4 {'#'*10} ")
+print(f"\n{'#' * 10} Test #4 {'#' * 10} ")
 for _path_ in find_files(".c", ""):
     print(_path_)
 # Output: ($HOME will replaced with the actual path string)
 #
 
 # Test #5: Null
-print(f"\n{'#'*10} Test #5 {'#'*10} ")
+print(f"\n{'#' * 10} Test #5 {'#' * 10} ")
 for _path_ in find_files(".c", None):
     print(_path_)
 # Output: ($HOME will replaced with the actual path string)

@@ -38,18 +38,18 @@ our_cache.set(3, 3)
 our_cache.set(4, 4)
 
 # Test #1: Cache Hit
-print(f"\n{'#'*10} Test #1 {'#'*10} ")
+print(f"\n{'#' * 10} Test #1 {'#' * 10} ")
 print(our_cache.get(1))
 # Output: 1
 
 # Test #2: Cache Miss
-print(f"\n{'#'*10} Test #2 {'#'*10} ")
+print(f"\n{'#' * 10} Test #2 {'#' * 10} ")
 print(our_cache.get(9))
 # Output: -1
 # Because 9 is not present in the cache
 
 # Test #3: Cache Overflow
-print(f"\n{'#'*10} Test #3 {'#'*10} ")
+print(f"\n{'#' * 10} Test #3 {'#' * 10} ")
 our_cache.set(5, 5)
 our_cache.set(6, 6)
 
@@ -58,13 +58,13 @@ print(our_cache.get(3))
 # Because the cache reached it's capacity and 3 was the least recently used entry
 
 # Test #4: Empty Key: Cache Miss
-print(f"\n{'#'*10} Test #4 {'#'*10} ")
+print(f"\n{'#' * 10} Test #4 {'#' * 10} ")
 print(our_cache.get(""))
 # Output: -1
 # Because the key doesn't exists
 
 # Test #5: Null Key: Cache Miss
-print(f"\n{'#'*10} Test #5 {'#'*10} ")
+print(f"\n{'#' * 10} Test #5 {'#' * 10} ")
 print(our_cache.get(None))
 # Output: -1
 # Because the key doesn't exists
