@@ -11,12 +11,14 @@ Sequential traversal and comparison.
     - Space:  O(n)
 
 ### Complexity of the implemented Data Structure
-   - union:         O(mn)
-   - intersection:  O(mn)
+   - union:         O(m * n)
+        - m and n sizes of the two Linked Lists
+   - intersection:  O(m * n)
+        - m and n sizes of the two Linked Lists
 
 ### Reasoning
-I chose LinkedList for two reasons
-1. It was mentioned in the project to use it.
+I chose LinkedList for two reasons:
+1. It was mentioned in the project to use it
 2. I could have used HashTable or Set internally, but then 
     - It would not be Space Optimized
     - Using Set data structure would have defeated the purpose of implementing these two algorithms
