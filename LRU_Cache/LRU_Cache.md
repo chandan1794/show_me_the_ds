@@ -1,7 +1,7 @@
 # LRU Cache
 ### Data Structure
-I used **Dictionary** as **Hash Table** for the cache.
-To save the order I have user **dequeue** as **Queue**.
+- I used **Dictionary** as **Hash Table** for the cache.
+- To save the order I have used **dequeue** as **Queue**.
 
 ### Complexity for data structures
 - Hashtable (Average Time Complexity)
