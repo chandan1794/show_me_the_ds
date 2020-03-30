@@ -13,7 +13,7 @@ Min-heap or Minimum Heap for HuffmanTree
    - huffman_encoding:  O(n * log(n))
         - There are two parts which takes this much time, created sorted frequency set from the given string and building the min-heap.
    - huffman_decoding:   O(n)
-     - Will have to traverse through the whole encoded string character by character
+        - Will have to traverse through the whole encoded string character by character
    - Space: O(n)
 
 ### Reasoning

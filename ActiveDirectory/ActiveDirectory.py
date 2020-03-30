@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Group(object):
     def __init__(self, _name):
         self.name = _name
@@ -19,6 +22,9 @@ class Group(object):
     def get_name(self):
         return self.name
 
+    def __repr__(self):
+        return f"Group Name: {self.name}"
+
 
 def is_user_in_group(user, group):
     """
@@ -28,12 +34,17 @@ def is_user_in_group(user, group):
       user(str): user name/id
       group(class:Group): group to check user membership against
     """
-    if user in group.get_users():
-        return True
-    else:
-        for sub_group in group.get_groups():
-            return is_user_in_group(user, sub_group)
-    return False
+    group_queue = deque()
+    group_queue.append(group)
+    try:
+        while True:
+            curr_group = group_queue.pop()
+            if user in curr_group.get_users():
+                return True
+            else:
+                group_queue.extend(curr_group.get_groups())
+    except Exception as err:
+        return False
 
 
 # Preparing Data

@@ -11,15 +11,12 @@ Sequential traversal and comparison.
     - Space:  O(n)
 
 ### Complexity of the implemented Data Structure
-   - add_block:     O(n)
-   - Space:         O(n)
+   - union:         O(mn)
+   - intersection:  O(mn)
 
 ### Reasoning
-In the name of Blockchain, there is "chain", which means connected linearly.
-There are two data structures which are linear and works well.
-a. Array
-b. LinkedList
-
 I chose LinkedList for two reasons
 1. It was mentioned in the project to use it.
-2. There is no contiguous space requirement as needed for Array.
+2. I could have used HashTable or Set internally, but then 
+    - It would not be Space Optimized
+    - Using Set data structure would have defeated the purpose of implementing these two algorithms

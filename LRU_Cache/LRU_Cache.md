@@ -1,7 +1,7 @@
 # LRU Cache
 ### Data Structure
 I used **Dictionary** as **Hash Table** for the cache.
-To save the order I have user **List** as **Queue**.
+To save the order I have user **dequeue** as **Queue**.
 
 ### Complexity for data structures
 - Hashtable (Average Time Complexity)
@@ -25,4 +25,4 @@ I needed to use two different data structures because, Dictionary by default is 
 and List is ordered but time complexity for search is a variable of number of input elements i.e. O(n).
 So, I used most useful features from both the data structures
 - List as Queue: Ordered
-- Dictionary as HashTable: Search O(1)
+- Dictionary as HashTable: Search O(1) (Average Time Complexity)[https://wiki.python.org/moin/TimeComplexity]

@@ -25,7 +25,7 @@ def find_files(suffix, path):
             listing = [f"{path}/{ele}" for ele in listing]
 
             for sub_path in listing:
-                if os.path.isfile(sub_path) and sub_path.endswith(suffix):
+                if os.path.isfile(sub_path) and sub_path.endswith(suffix, len(suffix)):
                     files_with_suffix.append(sub_path)
                 elif os.path.isdir(sub_path):
                     files_with_suffix = files_with_suffix + find_files(suffix, sub_path)

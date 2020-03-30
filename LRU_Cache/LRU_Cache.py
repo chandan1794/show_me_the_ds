@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class LRU_Cache(object):
 
     def __init__(self, capacity):
@@ -5,15 +8,13 @@ class LRU_Cache(object):
         self.capacity = capacity
         self.size = 0
         self.lru = {}
-        self.cache_order = []
+        self.cache_order = deque()
 
     def get(self, key):
         try:
             value = self.lru[key]
-            del self.lru[key]
-            self.cache_order.remove(key)
-            self.size = self.size - 1
-            self.set(key, value)
+            self.cache_order.popleft()
+            self.cache_order.append(key)
             return value
         except Exception as e:
             return -1
@@ -24,7 +25,7 @@ class LRU_Cache(object):
             self.cache_order.append(key)
             self.size = self.size + 1
         else:
-            lru_key = self.cache_order.pop(0)
+            lru_key = self.cache_order.popleft()
             del self.lru[lru_key]
             self.lru[key] = value
             self.cache_order.append(key)
@@ -53,9 +54,9 @@ print(f"\n{'#' * 10} Test #3 {'#' * 10} ")
 our_cache.set(5, 5)
 our_cache.set(6, 6)
 
-print(our_cache.get(3))
+print(our_cache.get(2))
 # Output: -1
-# Because the cache reached it's capacity and 3 was the least recently used entry
+# Because the cache reached it's capacity and 2 was the least recently used entry
 
 # Test #4: Empty Key: Cache Miss
 print(f"\n{'#' * 10} Test #4 {'#' * 10} ")

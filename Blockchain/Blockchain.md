@@ -3,12 +3,12 @@
 I used **Singly LinkedList** as **Blockchain**.
 
 ### Complexity for data structures
-- Singly LinkedList
-    - Insert: O(n)
+- Singly LinkedList With Head and Tail Pointers
+    - Insert: O(1)
     - Space:  O(n)
 
 ### Complexity of the implemented Data Structure
-   - add_block:     O(n)
+   - add_block:     O(1)
    - Space:         O(n)
 
 ### Reasoning

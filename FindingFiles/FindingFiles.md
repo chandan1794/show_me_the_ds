@@ -3,8 +3,11 @@
 Recursion
 
 ### Complexity of the implemented Algorithm
-   - find_files: O(n), Where _n_ is the number of files, directories in the given path.
-   - Space: O(n), All the files where given suffix matches
+   - find_files: O(n * l)
+        - _n_ is the number of files, directories under all levels the given path
+        - _l_ is the length of the suffix
+   - Space: O(n)
+        - _n_ is number of all the files where given suffix matches
 
 ### Reasoning
 I chose Recursion because, it is a classic recursion problem. Where we do not know the depth of the problem.

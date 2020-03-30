@@ -23,19 +23,25 @@ class Block:
 class Blockchain:
     def __init__(self):
         self.head = None
+        self.tail = None
 
     def add_block(self, data):
         if self.head is None:
-            temp_block = Block(dt.utcnow(), data, "0")
-            self.head = temp_block
+            temp_block = Block(dt.utcnow(), data, None)
+            self.head = self.tail = temp_block
         else:
-            previous_block = self.head
-            while previous_block.next:
-                previous_block = previous_block.next
+            temp_block = Block(dt.utcnow(), data, self.tail.hash)
+            temp_block.previous_hash = self.tail.hash
+            self.tail.next = temp_block
+            self.tail = temp_block
 
-            temp_block = Block(dt.utcnow(), data, previous_block.hash)
-            temp_block.previous_hash = previous_block.hash
-            previous_block.next = temp_block
+    def is_valid(self):
+        curr_blk = self.head
+        while curr_blk and curr_blk.next:
+            if curr_blk.next.previous_hash != curr_blk.calc_hash():
+                return False
+            curr_blk = curr_blk.next
+        return True
 
     def __str__(self):
         traverse_block = self.head
@@ -66,7 +72,7 @@ blkchain = Blockchain()
 blkchain.add_block(data="genesis")
 blkchain.add_block(data="test_3")
 blkchain.head.data = "not_genesis"
-print(f"Is Blockchain valid?: {blkchain.head.next.previous_hash == blkchain.head.calc_hash()}")
+print(f"Is Blockchain valid?: {blkchain.is_valid()}")
 # Output: Is Blockchain valid?: False
 
 # Test #4: Inserting Null values
